@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <style>
+ 
+  </style>
+
+  <title>SLE</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <style>
+    .first{
+      float:left;
+      margin-top: 15px;
+      margin-left:400px;
+      padding: 10px;
+      border-radius: 30px;
+      background-color:black;
+      color:aliceblue;
+      width: 500px;
+      height:auto;
+    }
+    p{
+        color:aliceblue;
+        font-size: 25px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        padding-right: 500px;
+        padding-top: 10px;
+
+    }
+  </style>
+  </head>
+  <body style="background-color: beige;">
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  
+    <!-- ======= Header ======= -->
+    <header id="header">
+      <div class="d-flex flex-column">
+  
+        <div class="profile">
+          <img src="{% static 'assets/img/slm.jpg' %}" alt="" class="img-fluid rounded-circle">
+          <h1 class="text-light"><a href="index.html">SLE</a></h1>
+         
+        </div>
+  
+        <nav id="navbar" class="nav-menu navbar">
+          <ul>
+            <li><a href="/home" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+            <li><a href="/log" class="nav-link scrollto"><i class="bx bx-user"></i> <span>sign In</span></a></li>
+            <li><a href="/AdminApp/leaveinfo" class="nav-link scrollto"><i class="bx bx-calendar-event"></i><span>Leave Info</span></a></li>
+          </ul>
+        </nav><!-- .nav-menu -->
+      </div>
+    </header><!-- End Header -->
+    {% for leave_type, info in leave_info.items %}
+    <div class="first">
+     
+      <p>{{ leave_type }}</p>
+      <p>Total: {{ info.total }}</p>
+      <p>Taken: {{ info.taken }}</p>
+      <p>Remaining: {{ info.remaining }}</p>
+     
+    </div>
+    {% endfor %}
+</body>    

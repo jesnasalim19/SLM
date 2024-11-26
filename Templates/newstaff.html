@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SLE</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet"href="{% static 'assets/css/notif.css' %}">
+  <link rel="stylesheet"href="{% static 'assets/css/staff.css' %}">
+  
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="{% static 'assets/img/admin.webp' %}" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">SLE</a></h1>
+        <h3 style="color:aliceblue;">Welcome Admin</h3>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="/AdminApp/" class="nav-link scrollto"><i class="bx bx-log-out"></i><span>sign Out</span></a></li>
+          <li><a href="/AdminApp/dashboard" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="/AdminApp/staff_details" class="nav-link scrollto"><i class="bx bx-user"></i></i><span>Staff Details</span></a></li>
+          <li><a href="/AdminApp/leave-requests" class="nav-link scrollto"><i class="bx bx-calendar-plus"></i><span>Leave Approval</span></a></li>
+          <li><a href="/AdminApp/approves"class="nav-link scrollto"><i class="bx bx-check-circle" style="color: green;"></i><span>Approved Leaves</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+  <form method="post"action="assigned_staff">
+    
+    {% csrf_token %}
+  <h1 class="app">STAFF ON LEAVE</h1>
+   <div class="card">
+    <h3 style="color:darkgreen">{{success}}</h3>
+    <h3 style="color:darkred;">{{error}}</h3>
+    {% for ls in lev %}
+    <label>Staff Name: </label>
+    <input type="text"id="sn"name="sn"value="{{ls.sn}}">
+    <label>Leave Type: </label>
+    <input type="text"id="lt"name="lt"value="{{ls.lt}}">
+    <br>
+    <br>
+    <label>Start Date: </label>
+    <input type="text"id="start"name="start"value="{{ls.start}}">
+    <br>
+    <br>
+    <label>End Date: </label>
+    <input type="text"id="end"name="end"value="{{ls.end}}">
+    <br>
+    <br>
+    <label>Number of leaves: </label>
+    <input type="text" id="nl"name="nl"value="{{ls.rd}}">
+    {% endfor %}
+  </div>
+  
+  <div class="table-title">
+    <h3>OUR STAFFS</h3>
+    </div>
+    <table class="table-fill">
+    <thead>
+    <tr>
+    <th class="text-left">Staff Name</th>
+    <th class="text-left">Mobile Number</th>
+    <th class="text-left">Gender</th>
+    <th class="text-left">Staff Type</th>
+    <th class="text-left">Email</th>
+    <th class="text-left">Action</th>
+    </tr>
+    </thead>
+    <tbody class="table-hover">
+    {% for ls in st %}
+    <tr>
+    <input type="text"value="{{ls.fn}}"name="fn" hidden> 
+    <td class="text-left">{{ls.fn}}</td>
+    <td class="text-left">{{ls.mb}}</td>
+    <td class="text-left">{{ls.gn}}</td>
+    <td class="text-left">{{ls.st}}</td>
+    <td class="text-left">{{ls.em}}</td>
+    <td>
+    Assign Staff <input class="btn btn-danger" type="submit" value="{{ls.fn}}" name="fn">
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+  </form>
+</body>

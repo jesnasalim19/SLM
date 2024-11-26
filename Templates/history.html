@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SLE</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <link rel="stylesheet"href="{% static 'assets/css/staff.css' %}">
+</head>
+
+<body style="background-color: rgb(112, 172, 143);">
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+        <div class="profile">
+            <img src="{% static 'assets/img/slm.jpg' %}" alt="" class="img-fluid rounded-circle">
+            <h1 class="text-light"><a href="index.html">SLE</a></h1>
+           
+        </div>
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+            <li><a href="/home" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+            <li><a href="/log" class="nav-link scrollto"><i class="bx bx-log-out"></i><span>sign Out</span></a></li>
+            <li><a href="/AdminApp/leaveinfo" class="nav-link scrollto"><i class="bx bx-calendar-event"></i><span>Leave Info</span></a></li>
+            <li><a href="/leave_request" class="nav-link scrollto"><i class="bx bx-calendar-plus"></i><span>Leave Request</span></a></li>
+            <li><a href="/leave_history" class="nav-link scrollto"><i class="bx bx-calendar-check"></i><span>Leave History</span></a></li>
+            <li><a href="/notif" class="nav-link scrollto"><i class="bx bx-bell"></i><span>Notifications</span></a></li>
+            <li><a href="/salary"class="nav-link scrollto"><i class="bx bx-dollar"></i><span>Salary</span></a></li>
+          </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+ 
+<div class="table-title">
+<h3>MY LEAVES</h3>
+
+</div>
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">Staff Name</th>
+<th class="text-left">Leave Type</th>
+<th class="text-left">Start Date</th>
+<th class="text-left">End Date</th>
+<th class="text-left">Reason</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+{% for ls in not %}
+<tr>
+<td class="text-left">{{ls.sn}}</td>
+<td class="text-left">{{ls.lt}}</td>
+<td class="text-left">{{ls.start}}</td>
+<td class="text-left">{{ls.end}}</td>
+<td class="text-left">{{ls.rs}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</body>

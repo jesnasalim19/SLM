@@ -1,0 +1,223 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SLE</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <style>
+    .leaves{
+      float:right;
+      margin-right: 300px;
+    }
+    .square{
+        margin-top: 40px;
+        margin-left: 400px;
+
+    }
+    .one{
+        margin-top: 10px;
+        width:30px;
+        height:30px;
+        background-color: green;
+    }
+    .two{
+        margin-top: 10px;
+        width:30px;
+        height:30px;
+        background-color: yellow;
+
+    }
+    .three{
+        margin-top: 10px;
+        width:30px;
+        height:30px;
+        background-color:rgb(56, 174, 190);
+
+    }
+    .four{
+        margin-top: 10px;
+        width:30px;
+        height:30px;
+        background-color:orangered;
+
+    }
+    .five{
+      margin-top: 10px;
+      width:30px;
+      height:30px;
+      background-color:  chocolate;
+    }
+    .six{
+      margin-top: 10px;
+      width:30px;
+      height:30px;
+      background-color: indigo;
+
+    }
+    .all{
+        float: left;
+        margin-top: 60px;
+        margin-left: 600px;
+    }
+    .cs{
+        background-color: green;
+        text-align: center;
+        width:400px;
+       
+    }
+    label{
+        
+        margin-left: 40px;
+        float: left;
+        font-size: 20px;
+        color:darkred;
+    }
+    h3{
+        text-align: center;
+        color:rgb(231, 198, 198);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .sl{
+        background-color: yellow;
+        width:400px;
+       
+        
+    }
+    .ml{
+        background-color: rgb(56, 174, 190);
+        width:400px;
+
+    }
+    .pl{
+        background-color: orangered;
+        width:400px;
+    }
+    .vc{
+        background-color: chocolate;
+        width:400px;
+    }
+    .cl{
+      background-color:indigo;
+      width:400px;
+    }
+    .hp{
+      background-color:indigo;
+      width:400px;
+
+    }
+    body{
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+  </style>
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body style="background-image: url({% static 'assets/img/grad.avif' %});">
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="{% static 'assets/img/slm.jpg' %}" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">SLE</a></h1>
+       
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="/home" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="/log" class="nav-link scrollto"><i class="bx bx-user"></i> <span>sign In</span></a></li>
+          <li><a href="/AdminApp/leaveinfo" class="nav-link scrollto"><i class="bx bx-calendar-event"></i><span>Leave Info</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+ 
+  <div class="square">
+    <label>Casual Leave</label>
+    <div class="one">
+    </div>
+    <label style="margin-top: 10px;">Commuted Leave</label>
+    <div class="six">
+    </div>
+    <label style="margin-top: 10px;">Half Pay Leave</label>
+    <div class="six">
+    </div>
+    <label style="margin-top: 10px;">Sick Leave</label>
+    <div class="two">
+    </div>
+    <label style="margin-top: 10px;">Maternity Leave</label>
+    <div class="three">
+    </div>
+    <label style="margin-top: 10px;">Paternity Leave</label>
+    <div class="four">
+    </div>
+    <label style="margin-top: 10px;">Vacation</label>
+    <div class="five">
+    </div>
+
+  </div>
+  <div class="all">
+  {% for ls in leave_data %}
+  <div class="cs">
+    <h3>{{ls.cs}}days</h3>
+  </div>
+  <div class="sl">
+    <h3>{{ls.sl}}days</h3>
+  </div>
+  <div class="cl">
+    <h3>{{ls.cl}}days</h3>
+  </div>
+  <div class="hp">
+    <h3>{{ls.hp}}days</h3>
+  </div>
+  <div class="ml">
+    <h3>{{ls.ml}}days</h3>
+  </div>
+  <div class="pl">
+    <h3>{{ls.pl}}days</h3>
+  </div>
+  <div class="vc">
+    <h3>{{ls.vc}}days</h3>
+  </div>
+  {% endfor %}
+  </div>
+ 
+  
+</body>  

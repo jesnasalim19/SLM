@@ -1,0 +1,272 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SLM</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <style>
+    @media (min-width: 1025px) {
+.h-custom {
+height: 100vh !important;
+}
+}
+  </style>
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="{% static 'assets/img/slm.jpg' %}" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">SLE</a></h1>
+        
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="/" class="nav-link scrollto active"><i class="bx bx-home"></i><span>Home</span></a></li>
+          <li><a href="/reg" class="nav-link scrollto"><i class="bx bx-user"></i> <span>sign Up</span></a></li>
+          <li><a href="/log" class="nav-link scrollto"><i class="bx bx-user"></i> <span>sign In</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <section class="h-100 h-custom" style="background-color: #8fc4b7;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <img src="{% static 'assets/img/reg.jpg' %}"
+              class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+              alt="Sample photo">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Sign Up</h3>
+  
+              <form class="px-md-2"method="post"action="reg">
+              {% csrf_token %}
+                <div class="form-outline mb-4">
+                  <input type="text" id="fn" name ="fn" class="form-control" required/>
+                  <span id="sfn"></span>
+                  <label class="form-label" for="form3Example1q">Full Name</label>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline datepicker">
+                      <input type="text" name="mb" class="form-control" id="mb" required/>
+                      <span id="smb"></span>
+                      <label for="exampleDatepicker1" class="form-label">Mobile Number</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <select class="select"name="gn">
+                      <option value="1" disabled>Gender</option>
+                      <option value="Female">Female</option>
+                      <option value="Male">Male</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <br>
+                    <label for="exampleDatepicker1" class="form-label"style="margin-top:-20px;">Gender</label>
+  
+                  </div>
+                </div>
+  
+                <div class="mb-4">
+  
+                  <select class="select"name="st"style="margin-top:10px;">
+                    <option value="1" disabled>Staff Type</option>
+                    <option value="Teaching">Teaching</option>
+                    <option value="Non-Teaching">Non-Teaching</option>
+                  </select>
+                  <br>
+                  <label for="exampleDatepicker1" class="form-label">Staff Type</label>
+  
+                </div>
+  
+                <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                  <div class="col-md-6">
+  
+                    <div class="form-outline">
+                      <input type="text" name="em" id="em" class="form-control"required />
+                      <span id="sem"></span>
+                      <label class="form-label" for="form3Example1w">Email</label>
+                    </div>
+  
+                  </div>
+                </div>
+                <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                  <div class="col-md-6">
+  
+                    <div class="form-outline">
+                      <input type="password" name="ps" id="ps" class="form-control"required />
+                      <span id="sps"></span>
+                      <label class="form-label" for="form3Example1w">Password</label>
+                    </div>
+  
+                  </div>
+                </div>
+                <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                  <div class="col-md-6">
+  
+                    <div class="form-outline">
+                      <input type="password" name="cps" id="cps" class="form-control"required />
+                      <span id="scps"></span>
+                      <label class="form-label" for="form3Example1w">Confirm Password</label>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+  
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    $(function(){
+      $('#sfn').hide();
+      $('#smb').hide();
+      $('#sem').hide();
+      $('#sps').hide();
+      $('#scps').hide();
+      $('#fn').focusout(function(){error_fname()});
+      $('#mb').focusout(function(){error_mobile()});
+      $('#em').focusout(function(){error_email()});
+      $('#ps').focusout(function(){error_pass()});
+      $('#cps').focusout(function(){error_cpass()});
+      function error_fname(){
+        var fn = $('#fn').val();
+        const regf = /^[A-Z a-z]+$/;
+        if (!regf.test(fn)){
+          $('#sfn').html('Only Alphabets allowed...');
+          $('#sfn').show();
+          $('#sfn').css('color','#FF0000');
+          $('#fn').css('border-bottom-color','#FF0000');
+
+        }
+        else{
+          $('#sfn').hide();
+          $('#fn').css('border-bottom-color','#008000');
+
+        }
+
+      }
+      function error_mobile(){
+        var mb = $('#mb').val();
+        const regm = /^[0-9]+$/;
+        if(!regm.test(mb)){
+          $('#smb').html('Only Numbers allowed...');
+          $('#smb').show();
+          $('#smb').css('color','#FF0000');
+          $('#mb').css('border-bottom-color','#FF0000');
+        }
+        else if(mb.length!=10){
+          $('#smb').html('Only 10 digits allowed...');
+          $('#smb').show();
+          $('#smb').css('color','#FF0000');
+          $('#mb').css('border-bottom-color','#FF0000')
+
+        }
+        else{
+          $('#smb').hide();
+          $('#mb').css('border-bottom-color','#008000');
+
+        }
+      }
+      function error_email(){
+        var em = $('#em').val();
+        const rege = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/; 
+        if(!rege.test(em)){
+          $('#sem').html('Check Email Format...');
+          $('#sem').show();
+          $('#sem').css('color','#FF0000');
+          $('#em').css('border-bottom-color','#FF0000');
+
+        }
+        else{
+          $('#sem').hide();
+          $('#em').css('border-bottom-color','#008000');
+
+        }
+      }
+      function error_pass(){
+        var ps = $('#ps').val();
+        const regp = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+        if(!regp.test(ps)){
+          $('#sps').html('Password must contain alphabets\n must contain numbers \n must contain special symbols such as !@#$%^&*\n minimum length must be 6\n must contain maximum of 16 charaters');
+          $('#sps').show();
+          $('#sps').css('color','#FF0000');
+          $('#ps').css('border-bottom-color','#FF0000');
+        }
+        else{
+          $('#sps').hide();
+          $('#ps').css('border-bottom-color','#008000');
+
+        }
+      }
+      function error_cpass(){
+        var cps = $('#cps').val();
+        var ps = $('#ps').val();
+        if(ps!=cps){
+          $('#scps').html('Password and confirm password must be same...');
+          $('#scps').show();
+          $('#scps').css('color','#FF0000');
+          $('#cps').css('border-bottom-color','#FF0000');
+        }
+        else{
+          $('#scps').hide();
+          $('#cps').css('border-bottom-color','#008000');
+        }
+      }
+
+
+
+    });
+  </script>
+</body>

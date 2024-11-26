@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SLE</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet"href="{% static 'assets/css/notif.css' %}">
+  <link rel="stylesheet"href="{% static 'assets/css/staff.css' %}">
+  
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="{% static 'assets/img/admin.webp' %}" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">SLE</a></h1>
+        <h3 style="color:aliceblue;">Welcome Admin</h3>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="/AdminApp/" class="nav-link scrollto"><i class="bx bx-log-out"></i><span>sign Out</span></a></li>
+          <li><a href="/AdminApp/dashboard" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="/AdminApp/staff_details" class="nav-link scrollto"><i class="bx bx-user"></i></i><span>Staff Details</span></a></li>
+          <li><a href="/AdminApp/leave-requests" class="nav-link scrollto"><i class="bx bx-calendar-plus"></i><span>Leave Approval</span></a></li>
+          <li><a href="/AdminApp/approves"class="nav-link scrollto"><i class="bx bx-check-circle" style="color: green;"></i><span>Approved Leaves</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+   <h1 class="app">STAFF ASSIGNED SUCCESSFULLY...</h1> 
+   <p style="color:white;margin-left: 400px;font-size: 20px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">{{staff}} {{msg}} {{staff}} {{msg1}}</p>
+   <div class="card">
+    <label>Staff on Leave: </label>
+    <input type="text"id="sn"name="sn"value="{{sn}}">
+    
+    <label>Number of Leave Days: </label>
+    <input type="text"id="nl"name="nl"value="{{nl}}">
+    <br>
+    <br>
+    <label>Leave From: </label>
+    <input type="text"id="start"name="start"value="{{start}}">
+    <br>
+    <br>
+    <label>To: </label>
+    <input type="text"id="end"name="end"value="{{end}}">
+    <br>
+    <br>
+    <label>Staff Assigned for those days: </label>
+    <input type="text" id="staff"name="staff"value="{{staff}}">
+
+  </div>
+  
+ 
+</body>
